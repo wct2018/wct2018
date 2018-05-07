@@ -1,0 +1,242 @@
+/* editor-style
+/* ---------------------------------------- */
+%entry-content {
+  @extend %clearfix;
+  font-size: 16px;
+  line-height: 1.7;
+  overflow: hidden;
+  body[class*="-en"] &,
+  body.category-english &{
+    // English post
+    font-size: 17px;
+  }
+
+  & > *:first-child{
+    margin-top: 0 !important;
+  }
+
+  // Headers
+  h1, h2, h3, h4, h5, h6 {
+    margin: 40px 0 30px;
+    font-weight: $body-base-weight;
+    line-height: 1.5;
+    @include wct-small-screen(){
+      margin: 30px 0 20px;
+    }
+  }
+
+  h1{
+    font-size: 28px;
+    line-height: 1.4;
+    margin: 0 0 40px;
+    padding: 0 0.2em;
+    border-bottom: 2px solid $h-border;
+    @include wct-small-screen(){
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+  }
+
+  h2{
+    font-size: 25px;
+    padding: 5px 10px 5px 15px;
+    border-left: 5px solid $h-border;
+    background: $wct-header-bg;
+    line-height: 1.4;
+    @include wct-small-screen(){
+      font-size: 18px;
+    }
+  }
+
+  h3{
+    line-height: 1.4;
+    font-size: 20px;
+    border-bottom: 1px solid $h-border;
+    @include wct-small-screen(){
+      font-size: 16px;
+    }
+  }
+
+  h4{
+    font-size: 18px;
+    padding: 5px 10px;
+    background: $wct-header-bg;
+    @include wct-small-screen(){
+      font-size: 16px;
+    }
+  }
+
+  h5{
+    border-left: 2px solid $h-border;
+    padding: 2px 0 2px 10px;
+    font-size: 16px;
+  }
+
+  h6{
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  img{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+  }
+
+  iframe{
+    max-width: 100%;
+  }
+
+  // Block elements
+  & > p{
+    margin: 2em 0;
+  }
+
+  p.interviewer{
+    color: #444;
+  }
+
+  blockquote{
+    @include base-margin;
+    box-sizing: border-box;
+    border-left: 3px solid $h-border;
+    padding: 10px 10px 10px 30px;
+    p{
+      margin: 1em 0;
+      &:first-child{
+        margin-top: 0;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+    @include wct-small-screen(){
+      border-left-width:  2px;
+      padding-left: 0.7em;
+    }
+  }
+
+  pre {
+    @include base-margin;
+    padding: 1em;
+    background: $wct-table-header-bg;
+    overflow-x: scroll;
+    font-family: $wct-monospace;
+
+  }
+
+  code, kbd{
+    display: inline-block;
+    font-family: $wct-monospace;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 2px;
+    margin: 0 2px;
+  }
+
+  ul, dl, ol{
+    @include base-margin;
+  }
+
+  ul, ol {
+    padding: 0 0 0 2em;
+    li{
+      list-style-position: outside;
+    }
+  }
+
+  ul {
+    ul {
+      margin-top: 0;
+    }
+  }
+
+  ol {
+    ol {
+      margin-top: 0;
+    }
+  }
+
+  dl{
+    padding-left: 0;
+    dt{
+      padding: 5px 10px 5px 10px;
+      border-left: 2px solid $h-border;
+      background: $wct-header-bg;
+      line-height: 1.1;
+      font-weight: $body-base-weight;
+    }
+    dd{
+      margin: 20px 0 30px 0.8em;
+    }
+  }
+
+  hr{
+    margin: 60px 0;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(to left, rgba(0,0,0,0), rgba(255,255,255,0.9), rgba(0,0,0,0));
+    background: linear-gradient(to left, rgba(0,0,0,0), rgba(255,255,255,0.9), rgba(0,0,0,0));
+
+    @include wct-md-screen(){
+      margin: 50px 0;
+    }
+
+    @include wct-small-screen(){
+      margin: 40px 0;
+    }
+  }
+
+  // Inline elements
+  a{
+    color: $link-color;
+  }
+
+  // Table
+  table {
+    @include base-margin;
+    max-width: 100%;
+    overflow-x: scroll;
+    table-layout: auto;
+    border-collapse: collapse;
+    &.fixed {
+      table-layout: fixed;
+    }
+    th, td{
+      padding: .9em 1em;
+      border: 1px solid #999;
+      text-align: left;
+      font-weight: $body-base-weight;
+    }
+    thead{
+      th{
+        text-align: center;
+        background: $wct-table-header-bg;
+      }
+    }
+    @include wct-small-screen() {
+      width: 100%;
+      tr {
+        margin-bottom: 10px;
+      }
+      td {
+        border-top: none;
+      }
+      tr, th, td {
+        display: block;
+        &.th-title {
+          background: $wct-table-header-bg;
+        }
+      }
+      thead {
+        display: none;
+      }
+    }
+  }
+
+  .gallery-row{
+    margin-right: auto;
+    margin-left: auto;
+  }
+}

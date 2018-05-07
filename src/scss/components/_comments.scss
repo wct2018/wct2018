@@ -1,0 +1,118 @@
+.comments{
+  &-area{
+    margin: 40px 0;
+  }
+
+  &-title{
+    font-weight: normal;
+    span{
+      font-weight: bold;
+    }
+    font-size: 25px;
+    padding: 5px 10px 5px 15px;
+    border-left: 5px solid $h-border;
+    line-height: 1.4;
+    @include wct-small-screen(){
+      font-size: 18px;
+    }
+  }
+}
+
+.commentlist{
+  padding: 0;
+  margin: 0;
+  li{
+    list-style: none;
+
+  }
+}
+
+p.nocomments{
+  text-align: center;
+  color: #888;
+}
+
+.comment{
+  padding: 1em 0 1em 1em;
+  article#{&}{
+    border-radius: 3px;
+    border: 1px solid transparent;
+  }
+  &.even > article{
+    background: #fff;
+    border-color: #ddd;
+  }
+  &.odd > article{
+    background: #f9f9f9;
+    border-color: #f9f9f9;
+  }
+  .avatar{
+    border-radius: 50%;
+    float: left;
+    margin-right: $wp-align-margin;
+  }
+  a{
+    @extend %text-link;
+  }
+  &-meta{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    font-size: 0.85em;
+  }
+  &-author{
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    cite{
+      font-style: normal;
+      font-weight: bold;
+    }
+  }
+
+  &-reply-title{
+
+  }
+
+  &-respond{
+    label{
+      display: inline-block;
+      font-weight: bold;
+      width: 8em;
+      .required{
+        color: $wct-footer-bg-hover;
+      }
+      &[for=comment]{
+        width: auto;
+        display: block;
+      }
+    }
+    input[type=text]{
+      padding: 5px;
+      box-sizing: border-box;
+      border-radius: 3px;
+      border: 1px solid #ddd;
+      width: 300px;
+    }
+    textarea{
+      display: block;
+      box-sizing: border-box;
+      border-radius: 2px;
+      border-color: $wct-btn-disabled-bg;
+      width: 100%;
+    }
+    input[type=submit]{
+      @extend .btn;
+      @extend %btn;
+    }
+  }
+
+}
+
+p.logged-in-as{
+  color: #444;
+  font-size: 0.85em;
+  a{
+    @extend %text-link;
+  }
+}

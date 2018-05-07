@@ -1,0 +1,127 @@
+// Detect deploy mode
+$env: 'development' !default;
+
+
+//
+//------------------------
+// Color setting
+//
+//
+
+// Main
+$wct-bg-color: #fff;
+$wct-header-bg: transparentize( #3094e9, 0.82);
+$wct-table-header-bg: #ccc;
+
+$h-border: #28b1c4;
+
+// Button
+$wct-btn-bg: #1d909d;
+$wct-btn-color: #fff;
+$wct-btn-disabled-bg: #ccc;
+$wct-btn-gb-hover: #349ba7;
+
+// Footer
+$wct-footer-bg: #10909E;
+$wct-footer-border: #19B1C6;
+$wct-footer-bg-hover: #FF4081;
+$wct-footer-border-hover: #FFB8D7;
+
+// link
+$link-color: #28b1c4;
+$link-hover-color: #025392;
+$link-line-color: #025392;
+
+//
+//------------------------
+// Font setting
+//
+//
+
+// Body
+$body-base-font:  helvetica, arial, 'Hiragino Kaku Gothic ProN', meiryo, 'ms pgothic', sans-serif;
+$body-base-weight: 300;
+$wct-monospace: Consolas, 'Courier New', Courier, Monaco, monospace;
+$fa-font-size-base: 1em;
+
+// Misc
+$wct-title-sans-en: 'Julius Sans One', sans-serif;
+
+//
+//------------------------
+// Path setting
+//
+//
+$img-path: "../images/" !default;
+@if($env == 'production') {
+  $img-path: "//wctokyo2017.github.io/wct2017/assets/images/";
+}
+
+//
+//------------------------
+// Navigation Setting
+//
+//
+$navigation-height: 50px;
+$navigation-height-sm: $navigation-height - 10;
+
+$navigation-base-bg: #1d909d;
+
+$navigation-base-bg-transparent: rgba( 0, 0, 0, .5 );
+$navigation-base-bg-transparent-hover: rgba( 255, 255, 255, .1 );
+
+$navigation-secondary-bg: #fc4482;
+$navigation-secondary-bg-hover: #fff;
+
+$navigation-link-pad: 20px;
+
+$navigation-submenu-bg: $navigation-base-bg;
+
+$navigation-submenu-border-top: #b4dee5;
+$navigation-submenu-border: #0a6063;
+
+
+//
+//------------------------
+// Grid setting
+//
+//
+
+$admin-bar-break-point: 782px;
+$wordcamp-break-point: 600px;
+
+$grid-xs: (
+  columns: 12,
+  gutter: 10px,
+  media: 380px,
+);
+
+$grid-sm-s: (
+  columns: 12,
+  gutter: 10px,
+  media: 500px,
+);
+
+$grid-sm: (
+  columns: 12,
+  gutter: 20px,
+  media: $wordcamp-break-point,
+);
+
+$grid-md: (
+  columns: 12,
+  gutter: 20px,
+  media: $admin-bar-break-point,
+);
+
+$grid-lg-s: (
+  columns: 12,
+  gutter: 20px,
+  media: 920px,
+);
+
+$grid-lg: (
+  columns: 12,
+  gutter: 20px,
+  media: 1081px,
+);

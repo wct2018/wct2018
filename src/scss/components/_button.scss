@@ -1,0 +1,92 @@
+.btn{
+  background: $wct-btn-bg;
+  box-shadow: 1px 2px 2px 2px rgba( 0, 0, 0, .1 );
+  transition: color .3s 0 linear, background-color .3s 0 linear, box-shadow .3s 0 linear;
+  border-radius: 28px;
+  box-sizing: border-box;
+  display: inline-block;
+  height: 56px;
+  line-height: 56px;
+  min-width: 150px;
+  text-align: center;
+  text-decoration: none;
+  padding: 0 40px;
+  margin: 10px auto;
+  -webkit-appearance: none;
+  &.full{
+    width: 100%;
+  }
+  &.disabled{
+    cursor: not-allowed;
+  }
+}
+
+input.btn{
+  cursor: pointer;
+}
+
+.pushbutton-wide{
+  @extend .btn;
+}
+
+a{
+  &.btn{
+    &:link, &:visited{
+      background: $wct-btn-bg;
+      color: $wct-btn-color;
+    }
+    &:hover, &:active{
+      background: $wct-btn-gb-hover;
+      color: $wct-btn-color;
+    }
+    &:active{
+      box-shadow: 0 0 0 0 transparent;
+    }
+    &.hollow{
+      border: 1px solid $link-color;
+      &:link, &:visited{
+        color: $link-color;
+        background: transparent;
+      }
+      &:hover, &:active{
+        background: transparent;
+        color: $wct-btn-bg;
+        border-color: $wct-btn-bg;
+      }
+    }
+    &.disabled{
+      pointer-events: none;
+      &:link, &:visited, &:active{
+        background-color: $wct-btn-disabled-bg;
+      }
+    }
+  }
+}
+
+%btn{
+  display: inline-block;
+  border: none;
+  font-size: 16px;
+  color: $wct-btn-color;
+  background: $wct-btn-bg;
+  &:hover {
+    background: $wct-btn-gb-hover;
+    color: $wct-btn-color;
+  }
+  &.hollow {
+    border: 1px solid $link-color;
+    background: transparent;
+    &:hover {
+      border-color: $wct-btn-bg;
+      color: $wct-btn-bg;
+    }
+  }
+  &.disabled {
+    pointer-events: none;
+    background-color: $wct-btn-disabled-bg;
+  }
+}
+
+input.btn{
+  @extend %btn;
+}

@@ -1,0 +1,100 @@
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body{
+  padding: 0;
+  margin: 0;
+}
+
+.hide{
+  display: none;
+}
+
+.text-center {
+  text-align: center;
+}
+
+body{
+  font-family: $body-base-font;
+  font-weight: $body-base-weight;
+  background-color: $wct-bg-color;
+}
+
+#page {
+  overflow: hidden;
+}
+
+.grid-container{
+  box-sizing: border-box;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  @include grid-container;
+
+  @include grid-media($grid-lg) {
+    width: 1080px;
+  }
+  @include wct-small-screen(){
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+//
+// -----------------
+// Utility
+//
+//
+%clearfix{
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.clearfix{
+  @extend %clearfix;
+}
+
+.assistive-text{
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  overflow: hidden;
+  top: -10px;
+}
+%fa{
+  display: inline-block;
+  text-decoration: inherit;
+  font-weight: normal;
+  font-style: normal;
+  font-size: inherit;
+  font-family: FontAwesome;
+  -webkit-font-smoothing: antialiased;
+}
+
+%text-link{
+  &:link, &:visited{
+    color: $link-hover-color;
+    text-decoration: underline;
+  }
+  &:hover, &:active{
+    color: $link-color;
+    text-decoration: none;
+  }
+}
+
+%text-input{
+  border: 1px solid #ddd;
+  color: #444;
+  padding: 4px 5px;
+  font-family: $wct-monospace;
+  border-radius: 2px;
+  font-size: 14px;
+  & + input{
+    margin-left: 0.5em;
+  }
+}

@@ -1,0 +1,20 @@
+.wcb_session {
+  .entry-content dl {
+    margin-bottom: 30px;
+  }
+
+  .session-speakers {
+    margin: 0;
+    padding: 5px 10px 5px 10px;
+    border-left: 2px solid $h-border;
+    background: $wct-header-bg;
+    line-height: 1.1;
+    font-weight: $body-base-weight;
+    font-size: 16px;
+  }
+
+  #session-speaker-names {
+    margin: 20px 0 30px .8em;
+    padding: 0;
+  }
+}

@@ -1,0 +1,79 @@
+/**
+ * Wrapped with media query
+ */
+@mixin wct-small-screen( $size: $wordcamp-break-point ) {
+  @media only screen and ( max-width: $size ) {
+    @content;
+  }
+}
+
+@mixin wct-md-screen( $size: $admin-bar-break-point ) {
+  @media only screen and ( max-width: $size ) {
+    @content;
+  }
+}
+
+/**
+ * aicon rotation
+ */
+@mixin aicon-rot($size: 16px) {
+  border-radius: 50%;
+  font-size: $size;
+  transition: .6s;
+  padding: 0;
+  height: $size;
+  line-height: $size;
+  width: $size;
+}
+
+/**
+ * sub menu
+ */
+@mixin sub-menu() {
+  background: $navigation-submenu-bg;
+  border-top: 1px solid $navigation-submenu-border-top;
+  border-bottom: 1px solid $navigation-submenu-border;
+  position: relative;
+  width: auto;
+
+  &:hover, &:active{
+    background-color: #28b1c4;
+  }
+
+  &:first-child{
+    border-top: 1px solid $navigation-submenu-border;
+  }
+
+  &:last-child{
+    border-bottom: none;
+  }
+}
+
+/**
+ * sub menu
+ */
+@mixin base-margin() {
+  margin: 40px 0;
+  @include wct-small-screen(){
+    margin: 30px 0;
+  }
+}
+
+
+@mixin separated-title($border-color){
+  display: flex;
+  align-items: center;
+  &:before,
+  &:after{
+    border-top: 1px solid $border-color;
+    content: "";
+    flex-grow: 1;
+  }
+  &:before{
+    margin-right: 1rem;
+  }
+  &:after{
+    margin-left: 1rem;
+  }
+}
+

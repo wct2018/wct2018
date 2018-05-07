@@ -1,0 +1,386 @@
+body{
+  padding-top: $navigation-height-sm;
+
+  @media only screen and ( min-width: $wordcamp-break-point ){
+    padding-top: $navigation-height;
+  }
+}
+.siteheader{
+  position: relative;
+}
+
+%header-bg{
+  background: $navigation-base-bg;
+  box-shadow: 0 2px 3px 0 rgba( 0, 0, 0, .2 );
+}
+
+%link{
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  color: #fff;
+  box-sizing: border-box;
+  display: block;
+  height: $navigation-height-sm;
+  letter-spacing: 1px;
+  line-height: $navigation-height-sm;
+  padding-left: $navigation-link-pad;
+  padding-right: $navigation-link-pad;
+
+  @media only screen and ( min-width: $wordcamp-break-point ){
+    height: $navigation-height;
+    line-height: $navigation-height;
+  }
+  &:link, &:visited{
+    color: #fff;
+    text-decoration: none;
+  }
+  &:hover, &:active{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+%sp-menu {
+  max-height: 400px;
+  max-height: calc(100vh - #{$navigation-height-sm});
+}
+
+.main-navigation,
+.main-small-navigation{
+  background: $navigation-base-bg;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  .admin-bar & {
+    top: 32px;
+    @media only screen and ( max-width: $admin-bar-break-point) {
+      top: 46px;
+    }
+  }
+  width: 100%;
+  height: $navigation-height-sm;
+
+  @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+    height: auto;
+  }
+
+  @media only screen and ( min-width: 1051px ){
+    height: $navigation-height;
+  }
+
+  ul{
+    padding: 0;
+    margin: 0;
+    @extend %clearfix;
+    li{
+      list-style: none;
+    }
+  }
+  a{
+    @extend %link;
+  }
+  .menu-all-pages-container{
+    position: relative;
+    padding: 0;
+    .menu{
+    }
+
+    // First label
+    & > .menu > li{
+      position: relative;
+
+      &:hover, &:active{
+        background-color: $navigation-base-bg-transparent-hover;
+      }
+
+      &.right{
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+
+        @media only screen and (max-width: $wordcamp-break-point - 1) {
+          bottom: auto;
+        }
+      }
+
+      &:hover > .sub-menu{
+        display: block;
+      }
+    }
+  }
+}
+
+.main-navigation{
+  @extend %header-bg;
+  .menu-all-pages-container{
+    @extend .grid-container;
+    height: $navigation-height-sm;
+    width: 100%;
+
+    @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+      height: auto;
+    }
+
+    @media only screen and ( min-width: 1051px ){
+      height: $navigation-height;
+    }
+
+    & > .menu{
+      display: block;
+
+      & > li{
+        height: $navigation-height-sm;
+        display: inline-block;
+        float: left;
+
+        @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+          height: auto;
+        }
+
+        @media only screen and ( min-width: 1051px ){
+          height: $navigation-height;
+        }
+
+        @include wct-small-screen(){
+          display: none;
+        }
+
+        // icon
+        &.menu-item-has-children > a{
+          padding-top: 1px;
+          &:after{
+            @extend %fa;
+            @include aicon-rot(8px);
+            content: $fa-var-play;
+            transform: rotateZ( 90deg );
+            margin-left: 0.5em;
+            vertical-align: middle;
+          }
+          &:hover:after{
+            transform: rotateZ( 270deg );
+          }
+        }
+        // 2nd level
+        & > .sub-menu {
+          display: none;
+          position: absolute;
+          left: 0;
+          top: $navigation-height-sm;
+          width: auto;
+
+          @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+            height: auto;
+            top: 100%;
+          }
+
+          @media only screen and ( min-width: 1051px ){
+            height: $navigation-height;
+            top: $navigation-height;
+          }
+
+          & > li {
+            width: auto;
+            white-space: nowrap;
+            position: relative;
+            // 3rd level
+            & > .sub-menu {
+              display: none;
+              position: absolute;
+              top: 0;
+              left: 100%;
+            }
+            &:hover > .sub-menu {
+              display: block;
+            }
+          }
+        }
+        &.right > .sub-menu{
+          left: auto;
+          right: 0;
+          & > li{
+            // 3rd level
+            & > .sub-menu{
+              left: auto;
+              right: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.main-small-navigation{
+  @extend %header-bg;
+  .menu-all-pages-container{
+    @extend %sp-menu;
+    z-index: 10;
+    position: relative;
+    top: -1 * $navigation-height-sm;
+    padding-top: $navigation-height-sm;
+    overflow-y: scroll;
+
+    @media only screen and ( min-width: $wordcamp-break-point ){
+      top: -1 * $navigation-height;
+      padding-top: $navigation-height;
+      max-height: calc(100vh - #{$navigation-height});
+    }
+
+    & > .menu > li{
+      display: none;
+      @include sub-menu;
+
+      &.right{
+        background-color: $navigation-secondary-bg;
+        display: inline-block;
+        text-align: center;
+        width: 50%;
+        & > a{
+          &:before{
+            @extend %fa;
+            content: $fa-var-globe;
+            margin-right: 0.5em;
+          }
+        }
+      }
+      & > .sub-menu{
+        & > li{
+          &:first-child{
+            border-top: 1px solid $navigation-submenu-border;
+          }
+          & > .sub-menu{
+            & > li{
+              &:first-child{
+                border-top: 1px solid $navigation-submenu-border;
+              }
+              & > a{
+                &:before{
+                  @extend %fa;
+                  content: $fa-var-caret-right;
+                  color: transparent;
+                  margin-right: 0.5em;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    a {
+      &:before {
+        @extend %fa;
+        content: $fa-var-play;
+        font-size: 7px;
+        line-height: 8px;
+        height: 8px;
+        margin-right: 1em;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .menu-toggle {
+    position: relative;
+    z-index: 11;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    @extend %link;
+
+    &:before {
+      @extend %fa;
+      content: $fa-var-navicon;
+      margin-right: 0.5em;
+    }
+    &.toggled-on {
+      &:before {
+        content: $fa-var-close;
+      }
+      & + div + .menu-all-pages-container .menu {
+        & > li {
+          display: block;
+          &:last-child {
+            border-bottom: none;
+          }
+          &.right li {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .menu{
+    display: block !important;
+  }
+}
+
+.main-navigation,
+.main-small-navigation {
+  .menu {
+    @media only screen and ( min-width: $wordcamp-break-point ) and (max-width: 1050px){
+      padding-right: 120px;
+    }
+
+    .right {
+      & > a {
+        background: $navigation-secondary-bg;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        height: auto;
+        &:hover, &:active {
+          background-color: $navigation-secondary-bg-hover;
+          color: $navigation-secondary-bg;
+        }
+
+        &:before {
+          @extend %fa;
+          @include aicon-rot(16px);
+          content: $fa-var-globe;
+          margin-right: 0.5em;
+        }
+
+        @media only screen and ( min-width: $wordcamp-break-point ) {
+          &:before {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  .sub-menu {
+    @media only screen and ( min-width: $wordcamp-break-point ) {
+      border-radius: 0 0 5px 5px;
+      box-shadow: 0 0 5px 0 rgba( 0, 0, 0, .4 );
+    }
+
+    li {
+      @include sub-menu;
+
+      @media only screen and ( min-width: $wordcamp-break-point ) {
+        &:first-child {
+          border-top: none;
+        }
+
+        &:last-child {
+          border-radius: 0 0 5px 5px;
+        }
+      }
+    }
+  }
+}
+
+// Fix admin bar on min screen
+#wpadminbar{
+  @media only screen and (max-width: $admin-bar-break-point) {
+    position: fixed;
+  }
+}

@@ -1,0 +1,71 @@
+extends includes/_layout
+
+block body
+
+  #page
+
+    header#masthead.site-header
+      hgroup
+        h1.site-title
+          a(href='#') WordCamp Tokyo 2017
+        h2.site-description Just another WordPress site
+      nav.site-navigation.main-navigation
+        h1.assistive-text Menu
+        .assistive-text.skip-link
+          a(href='#content') Skip to Content
+        .menu-all-pages-container
+          ul#menu-all-pages.menu
+            li.menu-item.menu-item-has-children
+              a(href='#') メニュー1
+              ul.sub-menu
+                li.menu-item
+                  a(href='#') サブメニュー1
+                li.menu-item
+                  a(href='#') サブメニュー2
+            li.menu-item
+              a(href='#') メニュー2
+            li.menu-item.right
+              a(href='#') English
+              ul.sub-menu
+                li.menu-item
+                  a(href='#') English Sub 1
+                li.menu-item
+                  a(href='#') English Sub 2
+
+    #main
+
+      #primary.site-content
+        #content
+          article.hentry
+            header.entry-header
+              .entry-title Content Title
+              .entry-meta
+                | This entry was tagged as
+                a(href='#') Undefined
+                |  and published at 2017/09/30
+            .entry-content
+              p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ultrices commodo mauris, rhoncus finibus dolor elementum quis. Pellentesque fringilla consectetur eros in luctus. Phasellus dui diam, iaculis mollis bibendum a, posuere in elit. Nullam lacinia tortor eget ex tincidunt eleifend. Vestibulum et aliquet mauris, eget eleifend urna. Ut nec magna odio. Donec sit amet arcu condimentum lectus aliquam scelerisque. Nulla facilisi.
+
+              p Fusce facilisis bibendum imperdiet. Nulla facilisi. Nullam vel tellus tortor. Duis vel ex nec erat convallis euismod at a sapien. Vivamus quam nulla, consectetur non nisi eget, fermentum egestas ex. Phasellus tempor interdum dui a consequat. Duis sed arcu non nisi ornare bibendum. Proin interdum orci neque, non fermentum nunc scelerisque non.
+
+              h2 This is a lorem ipsum
+
+              p Pellentesque eu elit elementum, hendrerit ex a, dictum lectus. Aliquam eros est, malesuada ut quam at, tempor finibus diam. Proin sed pellentesque tellus. Curabitur at nisl iaculis, pretium arcu vitae, egestas lectus. Mauris in scelerisque lectus. Integer ultricies pharetra elit eu finibus. Nulla facilisi. Sed at ornare risus. Sed rutrum facilisis dolor. Donec vitae congue arcu, in pellentesque metus. Duis facilisis felis a pharetra viverra. Nunc imperdiet nisl in erat vehicula, placerat sagittis nisl congue. Phasellus iaculis tincidunt pretium. Duis a odio nec nibh semper gravida non sit amet felis. Morbi vitae ex nunc. Curabitur vulputate sit amet nibh nec maximus.
+
+              h3 Here is another lipsum
+
+              p Fusce tempus, augue id facilisis dictum, dolor eros congue augue, at ullamcorper erat nisl rhoncus velit. Proin rhoncus odio eros, a pellentesque augue iaculis a. Suspendisse eu ligula porta, tincidunt eros ac, maximus mauris. Cras augue massa, euismod mattis nibh in, bibendum auctor elit. Maecenas feugiat metus eu ornare aliquam. Nam vel mauris non libero pharetra sollicitudin in sed quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+              p Cras euismod posuere lacus vitae imperdiet. Cras blandit at odio sit amet sodales. Donec sit amet lobortis justo. Sed at ipsum tincidunt, sagittis quam eu, interdum elit. Curabitur at faucibus velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse laoreet felis in nulla venenatis laoreet. Sed condimentum, ex quis vulputate semper, tortor nunc ultrices arcu, at tincidunt eros nisl sit amet dui. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec a magna velit. Suspendisse malesuada tempor mauris et porta. Etiam consectetur dui ac quam gravida, id aliquam diam facilisis. Nullam vel laoreet ante. Nam vel massa vitae eros gravida consectetur. Suspendisse leo nisi, egestas ac ligula nec, posuere finibus ligula.
+
+            footer.entry-meta
+              |This entry was tagged as
+              a(href='#') Undefined
+              | and published at 2017/09/30
+
+
+    footer#colophon.site-footer
+      .site-info
+        a.site-info-generator(href='#') Proudly Powered by WordPress
+        a.site-info-network(href='#') WordCamp.org
+    

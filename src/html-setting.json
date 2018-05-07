@@ -1,0 +1,12 @@
+{
+  "name": "wct2017",
+  "url": "https://github.com/wctokyo2017/wct2017",
+  "page":{
+    "top":{
+      "title": "example",
+      "description": "this is an exmaple.",
+      "keywords": "exmaple, gulp, grunt, html, css",
+      "ogpimage":""
+    }
+  }
+}
