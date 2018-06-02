@@ -47,7 +47,7 @@ git clone git@github.com:wct2018/vccw.git ./wct2018-vccw
 - 必要な親テーマをインストール
 - このテーマリポジトリをインストールし、有効化
 
-成功すれば、 `https://wct2018.dev` でアクセスします。証明書のエラーは無視してください。
+成功すれば、 `https://wctokyo2018.local` でアクセスします。証明書のエラーは無視してください。
 
 もし失敗した場合は、このリポジトリ[wct2018/vccw](https://github.com/wct2018/wct2018/issues) にイシューとして登録してください。
 
