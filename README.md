@@ -50,7 +50,7 @@ VCCWをクローンしているので、それをダウンロードしてくだ�
 [wct2018/vccw](https://github.com/wct2018/vccw)
 
 ```
-git clone git@github.com:wctokyo2018/vccw.git ./wct2018-vccw
+git clone git@github.com:wct2018/vccw.git ./wct2018-vccw
 ```
 
 これで、以下の設定が行われます。
@@ -106,11 +106,11 @@ npm run production
 
 本番用のリソースは静的なHTMLとして Github Pages にデプロイされます。
 
-[wct2018.github.io/wct2018/](https://wct2018.github.io/wct2017/)
+[wct2018.github.io/wct2018/](https://wct2018.github.io/wct2018/)
 
 WordCamp用サイトは以下のCSSを参照することで、デザインが適用されます。
 
-https://wctokyo2017.github.io/wct2017/assets/css/style.css
+https://wct2018.github.io/wct2018/assets/css/style.css
 
 ## 依存技術
 
