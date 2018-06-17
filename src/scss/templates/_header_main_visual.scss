@@ -1,0 +1,67 @@
+$mv-logo-width: 346px;
+$mv-logo-height: 297px;
+$mv-logo-width-min: 210px;
+
+// Main visual
+#content-widget-1{
+  border-bottom: $header-border;
+  background-color: $color-black90;
+  .widget-title{
+    @extend .screen-reader-text;
+  }
+  .widget_text{
+    max-width: 946px;
+    margin: 0 auto;
+    background: transparent url("#{$img-path}header-wapuu.png") right bottom no-repeat;
+    background-size: 555px 471px;
+    text-align: center;
+    @include mq-only-small(){
+      position: relative;
+      background-image: none;
+      & > *{
+        z-index: 10;
+      }
+      &:after{
+        z-index: 1;
+        content: "";
+        display: block;
+        position: absolute;
+        width: 60%;
+        background: url("#{$img-path}header-wapuu.png") left center no-repeat;
+        height:471px / 555 * 310;
+        background-size: 310px 471px / 555 * 310;
+        bottom: 0;
+        left: 40%;
+      }
+      background-size: 310px
+    }
+  }
+  .textwidget{
+    margin: 0 auto;
+    padding: 44px 0 53px;
+    @include mq-only-small(){
+      position: relative;
+      padding: 0 0 33px;
+      z-index: 20;
+    }
+  }
+  .mv-logo{
+    margin-bottom: 36px;
+    margin-left: 156px;
+    width: $mv-logo-width;
+    height: $mv-logo-height;
+    @include mq-only-small(){
+      position: relative;
+      top: -20px;
+      width: $mv-logo-width-min;
+      height: $mv-logo-height / $mv-logo-width * $mv-logo-width-min;
+      margin-bottom: 20px;
+      margin-left: $content-gap;
+    }
+    background: url("#{$img-path}header-logo.png") left top no-repeat;
+    background-size: cover;
+    h2, p, time{
+      @extend .screen-reader-text;
+    }
+  }
+}

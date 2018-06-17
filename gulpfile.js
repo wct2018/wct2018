@@ -6,7 +6,8 @@ var gulp           = require('gulp'),
     $              = require('gulp-load-plugins')({ pattern: ['gulp-*', 'gulp.*'], replaceString: /\bgulp[\-.]/}),
     argv           = require('yargs').argv,
     browserSync    = require('browser-sync'),
-    runSequence    = require('run-sequence')
+    runSequence    = require('run-sequence'),
+    packageImporter = require('node-sass-package-importer')
 ;
 
 /*----------------------------------------------------------------------------*/
@@ -20,17 +21,17 @@ var deployFlg = false;
  * @return {Object}
  */
 function filePaths() {
-  var assetBase = deployFlg ? './docs/assets' : './dist/assets';
+  var assetBase = deployFlg ? 'docs/assets' : 'dist/assets';
   return {
     'root'           : './',
-    'vhost'          : 'wctokyo2017.dev',
+    'vhost'          : 'wctokyo2018.local',
     'port'           : 3000,
-    'htmlDest'       : './dist/',
-    'imagePath'      : './src/images/',
+    'htmlDest'       : 'dist/',
+    'imagePath'      : 'src/images/',
     'fontPath'       : assetBase + '/fonts',
     'imageDest'      : assetBase + '/images',
-    'htmlPath'       : './src/pug/',
-    'scssPath'       : './src/scss/',
+    'htmlPath'       : 'src/pug/',
+    'scssPath'       : 'src/scss/',
     'cssDest'        : assetBase + '/css'
   };
 }
@@ -47,7 +48,10 @@ var nodeSassConf = {
     require("bourbon-neat").includePaths,
     './node_modules/font-awesome/scss'
   ),
-  outputStyle   : 'compressed'
+  outputStyle   : 'compressed',
+	importer: packageImporter({
+		extensions: ['.scss', '.css']
+	})
 };
 
 /*----------------------------------------------------------------------------*/
@@ -164,7 +168,7 @@ gulp.task('watch', function() {
   // gulp.watch([paths.htmlDest  + '**/*'], ['bs-reload']);
   gulp.watch([paths.htmlPath  + '**/*.pug'], ['pug']);
   gulp.watch([paths.scssPath  + '**/*.scss'], ['sass']);
-  gulp.watch([paths.imageDest + '**/*'], ['image-min']);
+  gulp.watch([paths.imagePath + '**/*'], ['image-min']);
 });
 
 gulp.task('server', ['browser-sync', 'watch']);

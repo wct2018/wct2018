@@ -1,0 +1,261 @@
+
+
+//
+// Container
+//
+.site-header{
+  background: $color-black90 url("#{$img-path}pattern_2x.png") top left repeat;
+  background-size: 74px;
+}
+
+//
+//
+//
+.main-navigation{
+  position: absolute;
+  top: $header-gap;
+  right: $content-gap;
+}
+
+//
+// Toggle Button
+//
+.menu-toggle{
+  position: relative;
+  display: block;
+  @include mq-only-wide(){
+    display: none;
+  }
+  height: $navigation-height;
+  width: $navigation-height;
+  @extend %text-indent-far;
+  background: $color-white;
+  color: $color-white;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  .toggled-on{
+    background-color: $color-black;
+  }
+  &:after {
+    text-indent: 0;
+    content: "\f0c9";
+    .toggled-on &{
+      content: "\f00d";
+    }
+    font-family: "FontAwesome";
+    font-size: 16px;
+    color: $color-red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//
+// Branding
+//
+.site{
+  &-header{
+    height: $header-height;
+    border-bottom: $header-border;
+    position: relative;
+    box-sizing: content-box;
+    body.home &{
+      border-bottom: none;
+    }
+
+  }
+  &-branding{
+    body.home &{
+      display: none;
+    }
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &-title{
+    margin: 0;
+    padding: 0;
+    background: $color-black90;
+    a{
+      display: block;
+      width: $header-brand-width;
+      height: $header-height;
+      background: url("#{$img-path}header-brand.png") left top no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      @extend %text-indent-far;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+  &-description{
+    @extend .screen-reader-text;
+  }
+}
+
+//
+// Global navigation for wide screen.
+//
+@include mq-only-wide(){
+  .menu-all-pages-container{
+    position: relative;
+    width: auto;
+    .menu{
+      @include clearfix();
+      & > li{
+        float: left;
+        display: inline-block;
+        position: relative;
+        & > a{
+          display: inline-block;
+          height: $navigation-height;
+          line-height: $navigation-height;
+          padding: 0 $content-gap;
+          float: left;
+          font-weight: bold;
+          font-size: $navigation-font-size;
+          &:link, &:visited{
+            color: $color-black;
+            text-decoration: none;
+            background: rgba( 255, 255, 255, .8 );
+          }
+          &:hover, &:active{
+            color: $color-white;
+            background: $navigation-link-bg;
+            text-decoration: none;
+          }
+        }
+      }
+      .dropdown-toggle {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4px;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+        border: none;
+        &:after{
+          font-size: 8px;
+          line-height: 1;
+          vertical-align: middle;
+          content: "\f078";
+          font-family: "FontAwesome";
+          color: $color-red;
+        }
+      }
+    }
+    .sub-menu{
+      display: none;
+      position: absolute;
+      top: 44px;
+      left: 0;
+      li{
+        display: block;
+        border-bottom: 1px solid $color-white;
+        &:last-child{
+          border-bottom: none;
+        }
+        ul{
+          display: none;
+        }
+      a{
+        display: block;
+        line-height: $navigation-height;
+        height: $navigation-height;
+        font-size: $navigation-font-size;
+        padding: 0 $content-gap;
+        &:link, &:visited{
+          background: $navigation-link-bg;
+          color: $color-white;
+          text-decoration: none;
+        }
+        &:hover, &:active{
+          background: $color-gray;
+          text-decoration: none;
+          color: $color-black;
+        }
+      }
+      }
+    }
+    &.dropdown-toggle + .sub-menu,
+    li:hover .sub-menu{
+      display: block;
+    }
+  }
+}
+
+
+@include mq-only-not-wide(){
+
+  .menu-all-pages-container{
+    display: none;
+    .toggled-on &{
+      display: block;
+    }
+    position: absolute;
+    top: $header-height + 4;
+    body.home &{
+      top: $header-height;
+    }
+    z-index: 99;
+    right: 0;
+    width: 300px;
+    width: 90vw;
+    background: $color-black;
+    padding: 10px 0;
+    &:before{
+      $navigation-ticker-width: 10px;
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      position: absolute;
+      right: $navigation-height / 2 - $navigation-ticker-width / 2 ;
+      top: $navigation-ticker-width * -2;
+      border: $navigation-ticker-width solid transparent;
+      border-right-width: 5px;
+      border-left-width: 5px;
+      border-bottom-color: $color-black;
+    }
+    button{
+      display: none;
+    }
+    a{
+      display: block;
+      height: $navigation-height;
+      line-height: $navigation-height;
+      padding: 0 $content-gap;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    li li a{
+      height: $navigation-height - 4;
+      line-height: $navigation-height - 4;
+      padding: 0 $content-gap * 1.5;
+      font-weight: normal;
+      font-size: $navigation-font-size;
+      &:before{
+        content: "- ";
+        display: inline;
+      }
+    }
+    a:link, a:visited{
+      color: $color-white;
+      background-color: $color-black;
+      text-decoration: none;
+    }
+    a:hover, a:active{
+      background-color: $color-gray;
+      color: $color-black;
+      text-decoration: none;
+    }
+
+  }
+
+}

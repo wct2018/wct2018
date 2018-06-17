@@ -1,36 +1,22 @@
 @charset "utf-8";
 
-
-
 @import "variables";
+
+@import "~normalize.css";
+@import "~html5-reset";
+
 
 // Libraries
 @import "bourbon";
 @import "neat";
-@import "font-awesome";
 
 // Mixin & globals
 @import "mixins";
 @import "global";
 @import "animations";
+@import "post_style";
 
 // WordPress
 // ----------------------------------------------------------------------------
-@import 'wp/wp-config';
-@import 'wp/wp-classes';
-@import 'wp/wp-editor-style';
-
-@import "components/main";
-@import "components/button";
-@import "components/header";
-@import "components/navigation";
-@import "components/pagination";
-@import "components/sidebar";
-@import "components/footer";
-@import "components/after-header";
-@import "components/ticket";
-@import "components/comments";
-@import "components/speaker";
-@import "components/timetable";
-@import "components/session";
-@import "components/moderator";
+@import "components/*";
+@import "templates/*";
