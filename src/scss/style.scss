@@ -1,8 +1,10 @@
 @charset "utf-8";
 
-
-
 @import "variables";
+
+@import "~normalize.css";
+@import "~html5-reset";
+
 
 // Libraries
 @import "bourbon";
@@ -12,7 +14,9 @@
 @import "mixins";
 @import "global";
 @import "animations";
+@import "post_style";
 
 // WordPress
 // ----------------------------------------------------------------------------
 @import "components/*";
+@import "templates/*";

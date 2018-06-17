@@ -6,7 +6,8 @@ var gulp           = require('gulp'),
     $              = require('gulp-load-plugins')({ pattern: ['gulp-*', 'gulp.*'], replaceString: /\bgulp[\-.]/}),
     argv           = require('yargs').argv,
     browserSync    = require('browser-sync'),
-    runSequence    = require('run-sequence')
+    runSequence    = require('run-sequence'),
+    packageImporter = require('node-sass-package-importer')
 ;
 
 /*----------------------------------------------------------------------------*/
@@ -47,7 +48,10 @@ var nodeSassConf = {
     require("bourbon-neat").includePaths,
     './node_modules/font-awesome/scss'
   ),
-  outputStyle   : 'compressed'
+  outputStyle   : 'compressed',
+	importer: packageImporter({
+		extensions: ['.scss', '.css']
+	})
 };
 
 /*----------------------------------------------------------------------------*/
