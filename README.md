@@ -22,6 +22,25 @@ WordCampサイトには以下の制約があります。
 
 詳細については2015, 2016のWeb制作を担当した羽野さんのブログ記事「[WordCamp Tokyo 2015のサイトデザインについてのおはなし ](https://www.asknode.net/wordcamp-tokyo-2015-theme-design/)」を読んでください。その他、[保存版・WordCampサイトの作り方](https://capitalp.jp/2017/09/21/how-to-make-wordcamp-site/)なども参考になります。
 
+## ウィジェット
+
+ウィジェットに特別なマークアップをすることで、なんらかの素敵なスタイルが設定されます。
+
+### Before Content (Homepage) Area 1
+
+テキストウィジェット（1つのみ）を設定することで、かっこいいメインビジュアルが設定されます。HTMLは次のような構造にしてください。
+
+```
+<div class="mv-logo">
+<h2>WordCamp Tokyo 2018 Challenge!</h2>
+<p>
+<time>2018.09.16</time>-<time>2018.09.17</time>
+<span>ベルサール新宿グランドカンファレンスセンター5F</span>
+</p>
+</div>
+<a class="button-primary" href="https://2018.tokyo.wordcamp.org">最新情報をチェック</a>
+```
+
 ## セットアップ方法
 
 ### WordPressサイトの設定
