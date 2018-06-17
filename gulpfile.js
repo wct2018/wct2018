@@ -20,17 +20,17 @@ var deployFlg = false;
  * @return {Object}
  */
 function filePaths() {
-  var assetBase = deployFlg ? './docs/assets' : './dist/assets';
+  var assetBase = deployFlg ? 'docs/assets' : 'dist/assets';
   return {
     'root'           : './',
-    'vhost'          : 'wctokyo2017.dev',
+    'vhost'          : 'wctokyo2018.local',
     'port'           : 3000,
-    'htmlDest'       : './dist/',
-    'imagePath'      : './src/images/',
+    'htmlDest'       : 'dist/',
+    'imagePath'      : 'src/images/',
     'fontPath'       : assetBase + '/fonts',
     'imageDest'      : assetBase + '/images',
-    'htmlPath'       : './src/pug/',
-    'scssPath'       : './src/scss/',
+    'htmlPath'       : 'src/pug/',
+    'scssPath'       : 'src/scss/',
     'cssDest'        : assetBase + '/css'
   };
 }
