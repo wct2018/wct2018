@@ -15,3 +15,8 @@ body{
   text-indent: -9999px;
 }
 
+.content-box {
+  max-width: $content-width;
+  padding-right: $content-gap;
+  padding-left: $content-gap;
+}
