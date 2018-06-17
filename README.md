@@ -22,6 +22,7 @@ WordCampサイトには以下の制約があります。
 
 詳細については2015, 2016のWeb制作を担当した羽野さんのブログ記事「[WordCamp Tokyo 2015のサイトデザインについてのおはなし ](https://www.asknode.net/wordcamp-tokyo-2015-theme-design/)」を読んでください。その他、[保存版・WordCampサイトの作り方](https://capitalp.jp/2017/09/21/how-to-make-wordcamp-site/)なども参考になります。
 
+
 ## ウィジェット
 
 ウィジェットに特別なマークアップをすることで、なんらかの素敵なスタイルが設定されます。
@@ -79,6 +80,23 @@ npm start
 ```
 
 上記のコマンドを入力すると、各種ファイルが書き出され、監視が始まります。
+
+### CSSの構造
+
+`src/scss` ディレクトリにSCSSを書き込んでくだたい。componentsおよびtemplatesディレクトリにSCSSを追加すると、勝手に読み込まれます。
+
+サイト全体で使えそうな変数は`_variables.scss`に、サイト全体で使えまわせそうな部品は`components`ディレクトリに、サイトのそれぞれのパーツは`templates`ディレクトリにおいてください。
+
+### 画像
+
+画像は`src/images`ディレクトリに配置されたものが最適化されて`docs/assets/images`にコンパイルされます。
+多くはCSSの背景画像としての利用だと思われますが、その場合はローカルと本番デプロイでパスが変わるので、必ず次のように記載してください。`$img-path`変数が文脈によって色々書き換わります。
+
+```
+.main-visual{
+	background-image: url("#{$img-path}header-logo.png")
+}
+```
 
 ### 静的HTMLによる確認
 
