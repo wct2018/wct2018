@@ -1,0 +1,25 @@
+.button-primary{
+  display: inline-block;
+  height: $navigation-height - 4;
+  box-sizing: content-box;
+  line-height: $navigation-height - 4;
+  border: 2px solid $color-white;
+  background-color: $color-red;
+  color: #fff;
+  font-size: 14px;
+  padding: 0 2em;
+  transition: background-color .3s linear;
+  text-decoration: none;
+  &:hover{
+    background: $color-red-secondary;
+  }
+  a:link, a:visited{
+    color: $color-white;
+    text-decoration: none;
+  }
+  &:hover, &:active{
+    color: $color-white;
+    background: $color-red-secondary;
+    text-decoration: none;
+  }
+}

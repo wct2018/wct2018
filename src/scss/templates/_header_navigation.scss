@@ -1,10 +1,4 @@
-$header-height: 74px;
-$header-brand-width: 123px;
-$header-border: 4px solid $color-red;
-$header-gap: 15px;
-$navigation-height: 44px;
-$navigation-font-size: 12px;
-$navigation-link-bg: $color-black80;
+
 
 //
 // Container
@@ -69,6 +63,10 @@ $navigation-link-bg: $color-black80;
     border-bottom: $header-border;
     position: relative;
     box-sizing: content-box;
+    body.home &{
+      border-bottom: none;
+    }
+
   }
   &-branding{
     body.home &{
@@ -202,6 +200,9 @@ $navigation-link-bg: $color-black80;
     }
     position: absolute;
     top: $header-height + 4;
+    body.home &{
+      top: $header-height;
+    }
     z-index: 99;
     right: 0;
     width: 300px;

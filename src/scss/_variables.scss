@@ -55,3 +55,16 @@ $color-white: #fff;
 //
 $sans: "Hiragino Kaku Gothic ProN","メイリオ", meiryo sans-serif;
 $serif: '';
+
+
+//
+// Global Parts
+//
+$header-border: 4px solid $color-red;
+$header-height: 74px;
+$header-brand-width: 123px;
+
+$header-gap: 15px;
+$navigation-height: 44px;
+$navigation-font-size: 12px;
+$navigation-link-bg: $color-black80;
