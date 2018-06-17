@@ -69,6 +69,10 @@ npm start
 npm run server
 ```
 
+### Webフォントの適用
+
+FontAwesomeを利用するには、外観 > フォントへ移動し、**Font Awesome**という項目に次のURLを含めてください。`https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css`
+
 ### 本番環境へのデプロイ
 
 デプロイメントといっても、CSSが変わるだけです。リリースはmasterブランチの `docs` フォルダにて行います。

@@ -1,1 +1,36 @@
+// Applied only on wide screen.
+@mixin mq-only-wide() {
+  @media only screen and (min-width: $breakpoint-wide) {
+    @content;
+  }
+}
 
+// Applied if not wide.
+@mixin mq-only-not-wide() {
+  @media only screen and (max-width: $breakpoint-wide - 1) {
+    @content;
+  }
+}
+
+// Applied for small screen
+@mixin mq-only-small() {
+  @media only screen and (max-width: $breakpoint-small) {
+    @content;
+  }
+}
+
+// Applied if not small screen.
+@mixin mq-only-not-small() {
+  @media only screen and (min-width: $breakpoint-small + 1) {
+    @content;
+  }
+}
+
+@mixin clearfix() {
+  &:after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+  }
+}

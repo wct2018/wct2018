@@ -168,7 +168,7 @@ gulp.task('watch', function() {
   // gulp.watch([paths.htmlDest  + '**/*'], ['bs-reload']);
   gulp.watch([paths.htmlPath  + '**/*.pug'], ['pug']);
   gulp.watch([paths.scssPath  + '**/*.scss'], ['sass']);
-  gulp.watch([paths.imageDest + '**/*'], ['image-min']);
+  gulp.watch([paths.imagePath + '**/*'], ['image-min']);
 });
 
 gulp.task('server', ['browser-sync', 'watch']);

@@ -1,0 +1,144 @@
+$header-height: 74px;
+$header-brand-width: 123px;
+$header-border: 4px solid $color-red;
+$header-gap: 15px;
+$navigation-height: 44px;
+$navigation-font-size: 12px;
+
+//
+// Container
+//
+.site-header{
+  background: $color-black90 url("#{$img-path}pattern_2x.png") top left repeat;
+  background-size: 74px;
+}
+
+//
+//
+//
+.main-navigation{
+  position: absolute;
+  top: $header-gap;
+  right: $content-gap;
+}
+
+//
+// Toggle Button
+//
+.menu-toggle{
+  position: relative;
+  display: block;
+  @include mq-only-wide(){
+    display: none;
+  }
+  height: $navigation-height;
+  width: $navigation-height;
+  @extend %text-indent-far;
+  background: $color-white;
+  color: $color-white;
+  overflow: hidden;
+  border: none;
+  padding: 0;
+  line-height: 1;
+  .toggled-on{
+    background-color: $color-black;
+  }
+  &:after {
+    text-indent: 0;
+    content: "\f0c9";
+    .toggled-on &{
+      content: "\f00d";
+    }
+    font-family: "FontAwesome";
+    font-size: 16px;
+    color: $color-red;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+//
+// Branding
+//
+.site{
+  &-header{
+    height: $header-height;
+    border-bottom: $header-border;
+    position: relative;
+    box-sizing: content-box;
+  }
+  &-branding{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &-title{
+    margin: 0;
+    padding: 0;
+    background: $color-black90;
+    a{
+      display: block;
+      width: $header-brand-width;
+      height: $header-height;
+      background: url("#{$img-path}header-brand.png") left top no-repeat;
+      background-size: cover;
+      overflow: hidden;
+      @extend %text-indent-far;
+      &:hover{
+        opacity: .8;
+      }
+    }
+  }
+  &-description{
+    @extend .screen-reader-text;
+  }
+}
+
+//
+// Global navigation for wide screen.
+//
+@include mq-only-wide(){
+  .menu-all-pages-container{
+    position: relative;
+    width: auto;
+    .menu{
+      @include clearfix();
+      & > li{
+        float: left;
+        display: inline-block;
+        & > a{
+          display: inline-block;
+          height: $navigation-height;
+          line-height: $navigation-height;
+          padding: 0 $content-gap;
+          float: left;
+          font-weight: bold;
+          font-size: $navigation-font-size;
+          &:link, &:visited{
+            color: $color-black;
+            text-decoration: none;
+            background: rgba( 255, 255, 255, .8 );
+          }
+          &:hover, &:active{
+            color: $color-white;
+            background: $color-black80;
+            text-decoration: none;
+          }
+        }
+      }
+      .dropdown-toggle {
+        position: absolute;
+        top: 50%;
+        right: 8px;
+        padding: 0;
+        margin: 0;
+        background: transparent;
+      }
+    }
+    .sub-menu{
+      display: none;
+    }
+  }
+}
