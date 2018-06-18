@@ -1,0 +1,45 @@
+.nav {
+  &-links {
+    max-width: 540px;
+    padding: 0 16px;
+    margin: 0 auto 50px;
+    a {
+      color: $color-blue;
+      text-decoration: none;
+      line-height: 1.5;
+    }
+  }
+  &-previous,
+  &-next {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  &-previous + &-next {
+    border-top: 4px solid $color-gray;
+    padding-top: 26px;
+  }
+  &-previous {
+    padding-bottom: 24px;
+    &::before {
+      color: $color-red;
+      content: "\f060";
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-right: 16px;
+      font-size: 18px;
+    }
+  }
+  &-next {
+    text-align: right;
+    justify-content: flex-end;
+    &::after {
+      color: $color-red;
+      content: "\f061";
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: 16px;
+      font-size: 18px;
+    }
+  }
+}
