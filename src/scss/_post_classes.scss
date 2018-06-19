@@ -1,0 +1,77 @@
+/* -------------------------------------------------------------- */
+/* WordPress specific classes
+/* -------------------------------------------------------------- */
+$media-gap: 1em !default;
+%editorMargin {
+  margin: 20px 0;
+}
+// caption
+$wp-caption-margin: 15px;
+$wp-caption-text-font-size: 15px;
+
+// gallery
+$wp-gallery-margin: 15px;
+
+// alignment
+$wp-align-margin: 15px;
+
+
+// caption
+.wp-caption {
+  margin: 0 0 $wp-caption-margin 0;
+  max-width: 100%;
+  width: auto !important;
+  height: auto;
+  img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &-text {
+    margin: 0.8075em 0;
+    text-align: center;
+    font-size: $wp-caption-text-font-size;
+    a {
+      font-size: $wp-caption-text-font-size;
+    }
+  }
+}
+
+// align
+.alignleft {
+  float: left;
+  margin-right: $wp-align-margin;
+  margin-bottom: $wp-align-margin;
+  margin-left: 0;
+}
+.aligncenter {
+  clear: both;
+  display: block;
+  // margin: 0 auto;
+  margin: $media-gap auto;
+}
+.alignright {
+  float: right;
+  margin-left: $wp-align-margin;
+  margin-bottom: $wp-align-margin;
+  margin-right: 0;
+}
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
