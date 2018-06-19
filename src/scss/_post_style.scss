@@ -1,26 +1,221 @@
-$media-gap: 1em !default;
-
-@mixin post_style() {
-
-  // Headers
-  h1, h2, h3, h4, h5, h6 {
-
-  }
-
-  img {
-    max-width: 100%;
-    width: auto;
-    height: auto;
-  }
-
-  // Alignment.
-  .alignright {
-    float: right;
-  }
-  .alignleft {
-    float: left;
-  }
-  .aligncenter {
-    margin: $media-gap auto;
-  }
+// editor styles
+@mixin base-margin() {
+  margin: 40px 0;
 }
+
+  /* -------------------------------------------------------------- */
+  /* editor-style
+  /* -------------------------------------------------------------- */
+  .entry-content {
+    @include clearfix;
+    font-size: 14px;
+    line-height: 1.7;
+    overflow: hidden;
+    body[class*="-en"] &,
+    body.category-english &{
+      // English post
+      font-size: 17px;
+    }
+
+    & > *:first-child{
+      margin-top: 0 !important;
+    }
+
+    // headers
+    h1, h2, h3, h4, h5, h6 {
+      margin: 30px 0;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    h1{
+      font-size: 20px;
+      line-height: 1.4;
+      color: $color-black;
+    }
+
+    h2{
+      font-size: 18px;
+      padding: 5px 0 20px;
+      line-height: 1.4;
+      color: $color-black;
+      position: relative;
+        &:after {
+        content: '';
+        width: 60px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 4px solid $color-red;
+      }
+    }
+
+    h3{
+      line-height: 1.4;
+      font-size: 18px;
+      color: #555;
+      padding: 5px 10px 20px 0px;
+      position: relative;
+        &:after {
+        content: '';
+        width: 50px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-bottom: 2px solid #D8D8D8;
+      }
+    }
+
+    h4{
+      font-size: 16px;
+      color: $color-black70;
+    }
+
+    h5{
+      color: $color-black70;
+      font-size: 14px;
+    }
+
+    h6{
+      color: $color-black70;
+      font-size: 14px;
+    }
+
+    img{
+      max-width: 100%;
+      width: auto;
+      height: auto;
+    }
+
+    iframe{
+      max-width: 100%;
+    }
+
+    // block elements
+    & > p{
+      margin: 2em 0;
+    }
+
+    p.interviewer{
+      color: #444;
+    }
+
+    blockquote{
+      @include base-margin;
+      box-sizing: border-box;
+      border-left: 3px solid darken($color-gray,5%);
+      padding: 10px 0 10px 20px;
+      p{
+        margin: 1em 0;
+        &:first-child{
+          margin-top: 0;
+        }
+        &:last-child{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    pre {
+      @include base-margin;
+      padding: 1em;
+      background: #eee;
+      overflow-x: scroll;
+      font-family: $wct-monospace;
+
+    }
+
+    code, kbd{
+      display: inline-block;
+      font-family: $wct-monospace;
+      background: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      padding: 2px;
+      margin: 0 2px;
+    }
+
+    ul, dl, ol{
+      @include base-margin;
+    }
+
+    ul, ol {
+      padding: 0 0 0 2em;
+      li{
+        list-style-position: outside;
+      }
+    }
+
+    ul {
+      ul {
+        margin-top: 0;
+      }
+    }
+
+    ol {
+      ol {
+        margin-top: 0;
+      }
+    }
+
+    dl{
+      padding-left: 0;
+      dt{
+        padding: 8px 0;
+        line-height: 1.1;
+        font-weight: 600;
+        color: #555;
+      }
+      dd{
+        margin: 8px 0 8px 20px;
+      }
+    }
+
+    hr{
+      margin: 60px 0;
+      border: 0;
+      height: 1px;
+      background-image: -webkit-linear-gradient(to left, rgba(0,0,0,0), rgba(255,255,255,0.9), rgba(0,0,0,0));
+      background: linear-gradient(to left, rgba(0,0,0,0), rgba(255,255,255,0.9), rgba(0,0,0,0));
+    }
+
+    // inline elements
+    a{
+      color: #1A7EF0;
+      text-decoration: none;
+      &:hover{
+        border-bottom: 1px solid #1A7EF0;
+      }
+      &:visited, &:active{
+        color: #1A7EF0;
+      }
+    }
+
+    // table
+    table {
+      @include base-margin;
+      max-width: 100%;
+      overflow-x: scroll;
+      table-layout: auto;
+      border-collapse: collapse;
+      &.fixed {
+        table-layout: fixed;
+      }
+      th, td{
+        padding: .9em 1em;
+        border: 1px solid #999;
+        text-align: left;
+        font-weight: $base-weight;
+      }
+      thead{
+        th{
+          text-align: center;
+        }
+      }
+    }
+    
+    .gallery-row{
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
