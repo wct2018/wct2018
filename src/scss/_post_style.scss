@@ -180,7 +180,7 @@
     }
 
     // inline elements
-    a{
+    a:not(.more-link){
       color: #1A7EF0;
       text-decoration: none;
       &:hover{
