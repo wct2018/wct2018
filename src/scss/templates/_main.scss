@@ -10,7 +10,7 @@ article.hentry, article.error404 {
    }
 }
  
-.entry {
+.entry,.page {
   &-header{
     background: $color-gray;
     padding-top: 26px;

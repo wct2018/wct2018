@@ -6,7 +6,7 @@
   /* -------------------------------------------------------------- */
   /* editor-style
   /* -------------------------------------------------------------- */
-  .entry-content {
+  .entry-content,.page-content {
     @include clearfix;
     font-size: 14px;
     line-height: 1.7;
