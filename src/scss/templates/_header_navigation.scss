@@ -131,6 +131,12 @@
           }
         }
       }
+      & > li:last-of-type {
+        .sub-menu {
+          right: 0;
+          left: auto;
+        }
+      }
       .dropdown-toggle {
         position: absolute;
         top: 50%;
@@ -158,6 +164,7 @@
       li{
         display: block;
         border-bottom: 1px solid $color-white;
+        width: 250px;
         &:last-child{
           border-bottom: none;
         }
@@ -167,9 +174,9 @@
       a{
         display: block;
         line-height: $navigation-height;
-        height: $navigation-height;
         font-size: $navigation-font-size;
-        padding: 0 $content-gap;
+        padding: $content-gap;
+        line-height: 1.7;
         &:link, &:visited{
           background: $navigation-link-bg;
           color: $color-white;
