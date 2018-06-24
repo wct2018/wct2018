@@ -135,6 +135,7 @@
         .sub-menu {
           right: 0;
           left: auto;
+          z-index: 2;
         }
       }
       .dropdown-toggle {
@@ -161,6 +162,7 @@
       position: absolute;
       top: 44px;
       left: 0;
+      z-index: 2;
       li{
         display: block;
         border-bottom: 1px solid $color-white;

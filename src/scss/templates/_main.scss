@@ -9,13 +9,13 @@ article.hentry, article.error404 {
      margin-bottom: 48px;
    }
 }
- 
 .entry,.page {
   &-header{
     background: $color-gray;
     padding-top: 26px;
     padding-bottom: 32px;
     position: relative;
+    z-index: 1;
     &::after {
       position: absolute;
       bottom: -10px;
