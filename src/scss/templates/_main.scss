@@ -9,7 +9,7 @@ article.hentry, article.error404 {
      margin-bottom: 48px;
    }
 }
-.entry,.page {
+.entry{
   &-header{
     background: $color-gray;
     padding-top: 26px;
@@ -104,12 +104,15 @@ footer.entry-meta{
   margin: auto;
 }
 
-.page {
+.page{
   &-header {
     padding: 32px 0 34px;
     text-align: center;
+    .error-404 & {
+      @extend .entry-header;
+    }
   }
-  &-title {
+  &-title{
     color: $color-yellow;
     font-weight: bold;
     font-size: 24px;
@@ -121,5 +124,8 @@ footer.entry-meta{
       text-align: left;
       font-size: 16px;
     }
+  }
+  &-content{
+    @extend .entry-content;
   }
 }
