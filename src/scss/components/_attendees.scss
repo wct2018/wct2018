@@ -1,0 +1,71 @@
+#tix-attendees .tix-attendee {
+  &-list {
+
+    li {
+      list-style: none;
+      margin-bottom: 20px;
+      height: auto;
+      text-align: center;
+      &:nth-child(3n+1){
+        clear: left;
+      }
+    }
+
+    .avatar {
+      max-width: 80px;
+      width: auto;
+      height: auto;
+      float: none;
+      display: block;
+      margin: 0 auto;
+      border-radius: 50%;
+    }
+
+  }
+  &-name.tix-field {
+    margin: 10px 10px 5px;
+    color: $color-black70;
+    text-align: center;
+  }
+
+  &-url.tix-field, &-twitter.tix-field {
+    display: inline-block;
+    width: 32px;
+    height: 24px;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    &:after{
+      font-family: FontAwesome;
+      display: inline;
+      font-size: 24px;
+      line-height: 24px;
+      vertical-align: top;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      color: $color-black40;
+      transition: color .3s linear;
+      text-decoration: none !important;
+    }
+    &:link, &:visited{
+      color: #fff;
+      text-decoration: none;
+    }
+    &:hover, &:active{
+      color: #fff;
+      text-decoration: none !important;
+      &:after{
+        text-decoration: none;
+        color: $color-blue-secondary;
+      }
+    }
+  }
+  &-url.tix-field:after{
+    content: "\f0ac";
+  }
+  &-twitter.tix-field:after {
+    content: "\f099";
+  }
+}
