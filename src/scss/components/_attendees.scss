@@ -54,6 +54,7 @@
       text-decoration: none;
     }
     &:hover, &:active{
+      border-bottom: none !important;
       color: #fff;
       text-decoration: none !important;
       &:after{
