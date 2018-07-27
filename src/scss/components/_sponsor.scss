@@ -1,0 +1,86 @@
+.wcorg{
+
+  &-sponsors {
+    h2{
+      text-align: center;
+      font-size: 40px;
+      padding-bottom: 20px;
+      border-bottom: 3px solid transparent;
+      font-weight: bold;
+      &:after{
+        display: none;
+      }
+    }
+
+    & > div{
+      margin-bottom: 80px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &-sponsor{
+    padding: 40px 0;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    &:last-child{
+      border-bottom: none;
+    }
+    h3{
+      position: absolute;
+      right: 0;
+      top: 40px;
+      margin: 0 0 20px;
+      padding: 5px 10px;
+      font-size: 12px;
+      font-weight: bold;
+      display: inline-block;
+      color: #fff;
+      &:after{
+        display: none;
+        padding: 0;
+
+      }
+    }
+    &-description{
+      line-height: 1.6;
+      color: $color-black70;
+    }
+  }
+
+  @each $var in ( gold #ffb74a, silver #c4bfc4, bronze #9E5318, in-kind #69B74B, green #69B74B ) {
+    $name: nth( $var, 1 );
+    $color: nth($var, 2);
+    &-sponsor-level{
+      &-#{$name},
+      &-tokyo-#{$name}{
+        h2{
+          color: $color;
+          border-bottom-color: $color;
+        }
+        h3{
+          background: $color;
+        }
+      }
+    }
+  }
+
+  &-sponsor-level{
+
+
+    &-gold,
+    &-tokyo-gold{
+    }
+
+    &-silver,
+    &-tokyo-silver{
+    }
+
+    &-bronze,
+    &-tokyo-bronze{
+    }
+
+  }
+
+}
