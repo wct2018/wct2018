@@ -1,0 +1,38 @@
+.wcorg{
+
+  &-organizers{
+    margin: 20px 0;
+  }
+
+  &-organizer{
+    position: relative;
+    padding: 40px 20px;
+    border-bottom: 1px solid #ddd;
+    &:first-child{
+      border-top: 1px solid #ddd;
+    }
+    h2{
+      margin-left: 80px;
+      margin-top: 0;
+    }
+    &-description{
+
+    }
+    .avatar{
+      $avatar-size: 60px;
+      position: absolute;
+      top: 40px;
+      left: 20px;
+      border-radius: 50%;
+      width: $avatar-size;
+      height: $avatar-size;
+    }
+    p{
+      line-height: 1.6;
+      font-size: 0.85em;
+      color: $color-black80;
+      text-indent: 1em;
+    }
+  }
+
+}
