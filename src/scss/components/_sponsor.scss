@@ -85,3 +85,81 @@
   }
 
 }
+
+
+.wcb_widget_sponsors {
+  margin: 0 auto;
+  @extend .content-box;
+  .widget-title{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    @include mq-only-small() {
+      font-size: 22px;
+    }
+  }
+  h4{
+    text-align: center;
+    font-size: 32px;
+    padding-bottom: 16px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid transparent;
+    font-weight: bold;
+    @include mq-only-small() {
+      font-size: 18px;
+    }
+    &:after{
+      display: none;
+    }
+  }
+  
+  .sponsor {
+    &-level {
+      width: 100%;
+      margin-bottom: 24px;
+      &::after {
+        display: block;
+        content: '';
+        clear: left;
+      }
+    }
+    &-logo {
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 16px;
+      display: block;
+      img {
+        max-width: 100%;
+        max-height: 150px;
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+  
+  @each $var in ( gold #ffb74a 70%, silver #c4bfc4 50%, bronze #9E5318 33.333%, in-kind #69B74B 25%, green #69B74B 25% ) {
+    $name: nth( $var, 1 );
+    $color: nth($var, 2);
+    $width: nth($var, 3);
+    .sponsor-level{
+      &.#{$name},
+      &.tokyo-#{$name}{
+        h4{
+          color: $color;
+          border-bottom-color: $color;
+        }
+        h3{
+          background: $color;
+        }
+        .sponsor-logo {
+          width: $width;
+          @if $name != gold {
+            float: left;
+          }
+        }
+      }  
+    }
+  }
+  
+}
