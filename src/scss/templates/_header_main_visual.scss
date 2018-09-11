@@ -12,7 +12,7 @@ $mv-logo-width-min: 210px;
   .widget_text{
     max-width: 946px;
     margin: 0 auto;
-    background: transparent url("#{$img-path}header-wapuu.png") right bottom no-repeat;
+    background: transparent url("#{$img-path}header-wapuu_pc.png") right bottom no-repeat;
     background-size: 555px 471px;
     text-align: center;
     @include mq-only-small(){
@@ -27,7 +27,7 @@ $mv-logo-width-min: 210px;
         display: block;
         position: absolute;
         width: 60%;
-        background: url("#{$img-path}header-wapuu.png") left center no-repeat;
+        background: url("#{$img-path}header-wapuu_sp.png") left center no-repeat;
         height:471px / 555 * 310;
         background-size: 310px 471px / 555 * 310;
         bottom: 0;
@@ -46,6 +46,7 @@ $mv-logo-width-min: 210px;
     }
   }
   .mv-logo{
+    position: relative;
     margin-bottom: 36px;
     margin-left: 156px;
     width: $mv-logo-width;

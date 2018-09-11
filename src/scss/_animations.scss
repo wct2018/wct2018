@@ -1,1 +1,57 @@
+#text-2 {
+  &:after{
+    transform: translateX(100%);
+    animation: mv-wapu-translate 1s cubic-bezier(0.18, 0.89, 0.71, 1.02) 1 1.8s forwards;
+  }
+}
 
+.mv-logo-inner{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.mv-logo-txt{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transform: scale(0);
+  animation: mv-logo-scale 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 forwards;
+}
+
+.mv-logo-txt--wordcamp{
+  background-image: url(#{$img-path}/header-logo-01.png);
+  animation-delay: 0.2s;
+}
+.mv-logo-txt--tokyo{
+  background-image: url(#{$img-path}/header-logo-02.png);
+  animation-delay: 0.6s;
+}
+.mv-logo-txt--2018{
+  background-image: url(#{$img-path}/header-logo-03.png);
+  animation-delay: 1s;
+  animation-duration: 0.8s;
+}
+
+@keyframes mv-wapu-translate{
+  0%{
+    transform: translateX(100%);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+@keyframes mv-logo-scale{
+  0%{
+    transform: scale(0);
+  }
+  100%{
+    transform: scale(1);
+  }
+}
