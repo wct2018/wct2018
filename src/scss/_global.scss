@@ -2,6 +2,9 @@ body{
   font-family: $sans;
 }
 
+#page {
+  overflow: hidden;
+}
 
 .screen-reader-text{
   clip: rect(1px, 1px, 1px, 1px);
